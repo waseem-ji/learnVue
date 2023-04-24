@@ -61,9 +61,13 @@
               </svg>
             </span>
           </td>
-          <td>{{product.stock}}</td>
           <td>
-            
+            <input type="number" v-model.number="product.stock">
+          </td>
+          <td>
+            <button @click="product.stock += 1" class="btn btn-outline-dark">
+              Add
+            </button>
           </td>
         </tbody>
       </table>
