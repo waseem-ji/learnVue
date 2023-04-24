@@ -19,9 +19,22 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
   </head>
   <body>
-    <h1>Heysadas</h1>
     <div class="container">
       <div id="app">
+        <div class="row p-5">
+          <div class="col">
+            <label for="addTask" class="form-label">Add new task</label>
+            <input
+              type="text"
+              id="addTask"
+              class="form-control-lg"
+              v-model="newTask"
+            />
+            <button class="btn btn-primary p-2 ms-4" @click="addTask">
+              Add task
+            </button>
+          </div>
+        </div>
         <div class="row">
           <div class="col">
             <h3>All Tasks</h3>
@@ -35,7 +48,12 @@
             <ul>
               <li v-for="task in incompleteTasks" class="p-2">
                 {{task.description}}
-                <button class="btn btn-outline-success" @click="task.completed=true">Mark as complete</button>
+                <button
+                  class="btn btn-outline-success"
+                  @click="task.completed=true"
+                >
+                  Mark as complete
+                </button>
               </li>
             </ul>
           </div>
@@ -45,7 +63,10 @@
             <ul>
               <li v-for="task in completedTasks" class="p-2">
                 {{task.description}}
-                <button class="btn btn-outline-danger ms-3" @click="task.completed=false">
+                <button
+                  class="btn btn-outline-danger ms-3"
+                  @click="task.completed=false"
+                >
                   Mark as incomplete
                 </button>
               </li>
@@ -68,6 +89,7 @@
             { description: "Some task 6", completed: true },
             { description: "Some task 7", completed: true },
           ],
+          newTask: "",
         },
         computed: {
           incompleteTasks() {
@@ -75,6 +97,11 @@
           },
           completedTasks() {
             return this.tasks.filter((task) => task.completed);
+          },
+        },
+        methods: {
+          addTask() {
+            this.tasks.push({ description: this.newTask, completed: false });
           },
         },
       });
