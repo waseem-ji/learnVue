@@ -3,14 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <title>Vue Mastery</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <style>
+      body {
+        padding-top: 50px;
+      }
+    </style>
   </head>
   <body>
-    <div id="root">
-      <h1>Product goes here</h1>
-      <task>asdaklsdm</task>
-      <task>asda 3</task>
-      <task>asdak 3 </task>
-      <task>task 4</task>
+    <div id="root" class="container">
+      <message
+        title="Message title"
+        body="Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae impedit eius deleniti?"
+      ></message>
+      <message
+        title="Message title 2"
+        body="this is another message. Repudiandae impedit eius deleniti?"
+      ></message>
     </div>
 
     <!-- Import Js -->
