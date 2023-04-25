@@ -15,14 +15,10 @@
   </head>
   <body>
     <div id="root" class="container">
-      <message
-        title="Message title"
-        body="Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae impedit eius deleniti?"
-      ></message>
-      <message
-        title="Message title 2"
-        body="this is another message. Repudiandae impedit eius deleniti?"
-      ></message>
+      <modal v-if="showModal" @close="showModal=false">
+        <p>Some random text is placed here to be prompted on screen on click of the button</p>  
+      </modal>
+      <button @click="showModal=true">Show Modal</button>
     </div>
 
     <!-- Import Js -->
