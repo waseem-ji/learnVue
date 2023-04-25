@@ -15,16 +15,15 @@
   </head>
   <body>
     <div id="root" class="container">
-      <modal v-if="showModal" @close="showModal=false">
-        <template slot="title">Modal title12</template>
-        <template slot="body">Some random text is placed here to be prompted on screen on click of the button</template> 
-        <template slot="footer">
-          <button class="button is-success">Save changes</button>
-          <button class="button is-success">Add changes</button>
-          <button class="button"  @click="$emit('close')">Cancel</button>
-        </template> 
-      </modal>
-      <button @click="showModal=true">Show Modal</button>
+      <progress-view inline-template>
+        <div class="">
+          <h2>You rate is {{someRate}}</h2>
+          <p>
+            <button @click="someRate+=10">Update Completion Rate</button>
+          </p>
+
+        </div>
+      </progress-view>
     </div>
 
     <!-- Import Js -->
