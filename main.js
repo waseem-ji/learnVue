@@ -9,9 +9,12 @@ Vue.component('coupon',{
 
 new Vue({
     el:"#root",
+    data:{
+        couponApplied :false
+    },
     methods:{
         some() {
-            alert("haha , got u");
+           this.couponApplied = true
         }
     }
 });
